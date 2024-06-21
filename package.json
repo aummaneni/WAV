@@ -1,0 +1,88 @@
+{
+  "name": "gpt4api",
+  "displayName": "WAV",
+  "icon": "WAVLogo.png",
+  "description": " Why type when you can talk? Speak your code into existence with WAV - the ultimate speech-to-code companion",
+  "version": "1.0.5",
+  "engines": {
+    "vscode": "^1.86.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:yourExtension.setupPythonEnvironment"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "WAV Settings",
+      "properties": {
+        "WAV.gptApiKey": {
+          "type": "string",
+          "default": "",
+          "description": "Enter your GPT API key here."
+        }
+      }
+    },
+    "keybindings": [
+      {
+        "command": "WAV.startRecording",
+        "key": "ctrl+shift+a",
+        "mac": "ctrl+shift+a"
+      },
+      {
+        "command": "WAV.stopRecording",
+        "key": "ctrl+shift+s",
+        "mac": "ctrl+shift+s"
+      }
+    ],
+    "commands": [
+      {
+        "command": "WAV.startRecording",
+        "title": "Start Audio Recording"
+      },
+      {
+        "command": "WAV.stopRecording",
+        "title": "Stop Audio Recording"
+      },
+      {
+        "command": "WAV.setupPythonEnvironment",
+        "title": "Setup Python Environment"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@types/vscode": "^1.86.0",
+    "@vscode/test-cli": "^0.0.6",
+    "@vscode/test-electron": "^2.3.9",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "node-record-lpcm16": "^1.0.1",
+    "openai": "^4.28.0"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Socksham/hackillinois.git"
+  },
+  "publisher": "aummaneni",
+  "author": "aummaneni",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Socksham/hackillinois/issues"
+  },
+  "homepage": "https://github.com/Socksham/hackillinois#readme"
+}
